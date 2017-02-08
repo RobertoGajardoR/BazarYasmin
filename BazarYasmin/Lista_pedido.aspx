@@ -12,24 +12,35 @@
     
     <h2><%: Title %>.</h2>
         <div class="thumbnail" style="text-align:center">
-
+            <div style="padding:10px;text-align:center">    
                 <asp:TextBox ID="txtCodigo" runat="server"  class="form-control" Visible="False"></asp:TextBox>
               <div class="row form-inline">
-              <div style="text-align:left" class="form-group col-md-4 ">
+              <div style="text-align:left" class="form-inline col-md-3 ">
                 <label class="" for="lblFecha">Fecha :</label>
-                <asp:Label ID="lblFecha"  class="form-control " runat="server" Text="Label" style="width:100%;max-width: 800px;" ></asp:Label>
+                <asp:Label ID="lblFecha"  class="form-control " runat="server" Text="Label" style="" ></asp:Label>
               </div>
-            <div style="text-align:left" class="form-group col-md-4 ">
-                <label class="" for="txtCliente">Cliente :</label>
-                <asp:TextBox ID="txtCliente" class="form-control " runat="server" style="width:100%;max-width: 800px;" ></asp:TextBox>
+            <div style="text-align:left" class="form-inline col-md-3 ">
+                <label class="" for="txtEntrega">Entrega :</label>
+                <asp:DropDownList  AppendDataBoundItems="true" class="form-control "  ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="descripcion" DataValueField="cod_par">
+                    <asp:ListItem Value="0">Seleccione</asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [cod_par], [descripcion] FROM [tabla_par] WHERE ([cod_tab] = @cod_tab)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="2" Name="cod_tab" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
+                <div style="text-align:left" class="form-inline col-md-3 ">
+                <label class="" for="nombre">Nombre :</label>
+                <asp:TextBox ID="nombre" class="form-control " runat="server"  style="" ReadOnly="True" ></asp:TextBox>
               </div>
-              <div style="text-align:left" class="form-group col-md-4 ">
+              <%--<div style="text-align:left" class="form-inline col-md-3 ">
                 <label class="" for="TextBox2">Email :</label>
-                <asp:TextBox ID="TextBox2" class="form-control "  runat="server"  style="width:100%;max-width: 800px;" TextMode="Email"></asp:TextBox>
-              </div>
+                <asp:TextBox ID="TextBox2" class="form-control "  runat="server"  style="" TextMode="Email"></asp:TextBox>
+              </div>--%>
             </div>
           
-
+            </div>
             <br/>
             <style>
             @media (max-width: 644px) {
@@ -101,7 +112,7 @@
                     <td style="width: 110px">Total :
                 </td>
                     <td style="text-align:center;width: 110px;">
-                <asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label> CLP
                     </td>
                 </tr>
             </table>

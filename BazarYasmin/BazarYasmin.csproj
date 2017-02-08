@@ -67,6 +67,10 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="mercadopago, Version=0.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mercadopago.dll.1.0.0\lib\mercadopago.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -74,6 +78,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Spring.Rest, Version=1.1.1.35040, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
@@ -233,10 +241,19 @@
     <None Include="Properties\PublishProfiles\bazaryasmin - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="img\148752.png" />
+    <Content Include="img\banner-chocolate.jpg" />
+    <Content Include="img\bannerArticuloLimpieza.jpg" />
+    <Content Include="img\bannerArticulosEscolares.jpg" />
+    <Content Include="img\bannercarrito.jpg" />
+    <Content Include="img\BOTON-DE-MERCADO-PAGO-300x90.jpg" />
+    <Content Include="img\boton-paypal.png" />
     <Content Include="img\carro-de-compras.jpg" />
+    <Content Include="img\ContraEntrega.jpg" />
     <Content Include="img\dialog-error.png" />
     <Content Include="img\edit.png" />
     <Content Include="img\engranajes.png" />
+    <Content Include="img\entregaDomicilio.png" />
+    <Content Include="img\EntregaLocal.png" />
     <Content Include="img\productos\alfajor.jpg" />
     <Content Include="img\productos\cuchufli.jpg" />
     <Content Include="img\productos\detergente.jpg" />
@@ -247,6 +264,7 @@
     <Content Include="img\quitar.png" />
     <Content Include="img\trashcan_full_alt.png" />
     <Content Include="Lista_pedido.aspx" />
+    <Content Include="README-MercadoPago.html" />
     <Content Include="Realizar_pedido.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -513,6 +531,9 @@
       <Project>{0f905e33-b527-4b31-9c93-9e68eee451e7}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

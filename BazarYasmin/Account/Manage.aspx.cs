@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using BazarYasmin.Models;
+using System.Collections;
+using mercadopago;
 
 namespace BazarYasmin.Account
 {
@@ -123,6 +125,16 @@ namespace BazarYasmin.Account
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
 
             Response.Redirect("/Account/Manage");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            MP mp = new MP("4736332457228950", "0LWuHjraDil2tQrQN5uwMFaS1vuZMlWt");
+
+            Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"ARS\",\"unit_price\":10.5}]}");
+
+            Response.Write(preference["response"]);
         }
     }
 }

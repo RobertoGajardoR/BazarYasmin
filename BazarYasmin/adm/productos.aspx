@@ -97,26 +97,33 @@
   
 </div>
     <div class="col-lg-12" style="overflow: scroll;">
-
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataKeyNames="codigoproducto" DataSourceID="SqlDataSource1" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ShowFooter="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="1000px" EmptyDataText="No se encuentran productos" PageSize="7" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting">
+        <style>
+                        .GridHeader
+                        {
+                            text-align:center ;   
+                        }
+                    </style>
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataKeyNames="codigoproducto" DataSourceID="SqlDataSource1" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ShowFooter="True" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="1000px" EmptyDataText="No se encuentran productos" PageSize="7" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting">
         <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Middle" BackColor="#F7F7F7" />
     <Columns>
         <asp:TemplateField HeaderText="Codigo" SortExpression="codigoproducto">
                     <ItemTemplate>
                         <asp:Label ID="Labelg" runat="server" Text='<%# Bind("codigoproducto") %>'></asp:Label>
                     </ItemTemplate>
+            <HeaderStyle CssClass="GridHeader" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Imagen" SortExpression="imagen">
                     <ItemTemplate>
 <%--                        <asp:Label ID="Label8" runat="server" Text='<%# Bind("imagen") %>'></asp:Label>--%>
                         <asp:Image ID="Image1" Width="30" Height="30" runat="server"   ImageUrl='<%# Eval("imagen", "~/img/productos/{0}") %>' />
                     </ItemTemplate>
-           
+           <HeaderStyle CssClass="GridHeader" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Descripcion" SortExpression="descproducto">
                     <ItemTemplate>
                         <asp:Label ID="Label7" runat="server" Text='<%# Bind("descproducto") %>'></asp:Label>
                     </ItemTemplate>
+            <HeaderStyle CssClass="GridHeader" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Categoria" SortExpression="codcategoria">
                     <EditItemTemplate>
@@ -128,17 +135,20 @@
                     <ItemTemplate>
                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("codcategoria") %>'></asp:Label>
                     </ItemTemplate>
+            <HeaderStyle CssClass="GridHeader" />
             </asp:TemplateField>
         <asp:TemplateField HeaderText="Precio" SortExpression="´preproducto">
 
                     <ItemTemplate>
                         <asp:Label ID="Labelr" runat="server" Text='<%# Bind("preproducto") %>'></asp:Label>
                     </ItemTemplate>
+            <HeaderStyle CssClass="GridHeader" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Cantidad" SortExpression="canproducto">
                     <ItemTemplate>
                         <asp:Label ID="Label51" runat="server" Text='<%# Bind("canproducto") %>'></asp:Label>
                     </ItemTemplate>
+            <HeaderStyle CssClass="GridHeader" />
         </asp:TemplateField>
         <asp:CommandField  ButtonType="Image"  ControlStyle-Width="30" ControlStyle-Height="30" ShowDeleteButton="True" ShowEditButton="True" CancelImageUrl="~/img/dialog-error.png" DeleteImageUrl="~/img/trashcan_full_alt.png" DeleteText="Baja" EditImageUrl="~/img/edit.png" UpdateImageUrl="~/img/148752.png" >
                          
@@ -152,8 +162,8 @@
         <EmptyDataRowStyle Height="35px" HorizontalAlign="Center" VerticalAlign="Middle" />
         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" Height="35px" HorizontalAlign="Center" VerticalAlign="Middle" />
         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" Height="40px" />
-        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-        <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BackColor="#E7E7FF" ForeColor="#4A3C8C" Height="35px" />
+        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Center" />
+        <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BackColor="#E7E7FF" ForeColor="#4A3C8C" Height="35px" Wrap="True" />
         <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" Height="35px" HorizontalAlign="Center" VerticalAlign="Middle" />
         <SortedAscendingCellStyle BackColor="#F4F4FD" HorizontalAlign="Justify" />
         <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
