@@ -12,3 +12,10 @@ C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\De
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.dll
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\obj\Debug\Datos.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\obj\Debug\Datos.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\bin\Debug\Datos.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\bin\Debug\Datos.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.pdb

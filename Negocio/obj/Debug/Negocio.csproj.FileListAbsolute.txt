@@ -16,3 +16,12 @@ C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Debug\Negocio.dll
 C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\obj\Debug\Negocio.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\Negocio.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\ComponenteEntidad.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\Datos.dll
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\ComponenteEntidad.pdb
+C:\Users\Jokerman\Source\Repos\BazarYasmin\Negocio\bin\Debug\Datos.pdb

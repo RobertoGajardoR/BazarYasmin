@@ -50,7 +50,7 @@
     <Compile Include="VentasCN.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CarritoCompras\ComponenteEntidad\ComponenteEntidad.csproj">
+    <ProjectReference Include="..\ComponenteEntidad\ComponenteEntidad.csproj">
       <Project>{c4e3245e-8aeb-41a5-aa34-2d7c898047aa}</Project>
       <Name>ComponenteEntidad</Name>
     </ProjectReference>

@@ -1,0 +1,4 @@
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Release\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Release\ComponenteEntidad.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Release\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Release\ComponenteEntidad.pdb

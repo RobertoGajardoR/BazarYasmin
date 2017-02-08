@@ -1,0 +1,15 @@
+c:\users\willi\documents\visual studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.dll
+c:\users\willi\documents\visual studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.pdb
+c:\users\willi\documents\visual studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.csprojResolveAssemblyReference.cache
+c:\users\willi\documents\visual studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.dll
+c:\users\willi\documents\visual studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.csprojResolveAssemblyReference.cache
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.pdb
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.dll
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\bin\Debug\ComponenteEntidad.pdb
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.csprojResolveAssemblyReference.cache
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.dll
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\CarritoCompras\ComponenteEntidad\obj\Debug\ComponenteEntidad.pdb
