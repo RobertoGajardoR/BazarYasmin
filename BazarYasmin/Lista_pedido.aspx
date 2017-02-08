@@ -11,17 +11,24 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
     <h2><%: Title %>.</h2>
+              <asp:Panel CssClass="alert alert-success" runat="server" ID="alertpedido" Visible="False">
+                    <%--<div class="alert alert-success">--%>
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Pedido: </strong><asp:Label ID="lblAgregado" runat="server" Text="Label"></asp:Label>
+<%--</div>--%>
+    </asp:Panel>
         <div class="thumbnail" style="text-align:center">
-            <div style="padding:10px;text-align:center">    
+  
+            <div style="padding:10px;">    
                 <asp:TextBox ID="txtCodigo" runat="server"  class="form-control" Visible="False"></asp:TextBox>
               <div class="row form-inline">
-              <div style="text-align:left" class="form-inline col-md-3 ">
+              <div style="text-align:center" class="form-inline col-sm-4 ">
                 <label class="" for="lblFecha">Fecha :</label>
-                <asp:Label ID="lblFecha"  class="form-control " runat="server" Text="Label" style="" ></asp:Label>
+                <asp:Label ID="lblFecha"  class="form-control " runat="server" Text="Label" style="width:250px;margin-left:auto;margin-right:auto" ></asp:Label>
               </div>
-            <div style="text-align:left" class="form-inline col-md-3 ">
+            <div style="text-align:center" class="form-inline col-sm-4 ">
                 <label class="" for="txtEntrega">Entrega :</label>
-                <asp:DropDownList  AppendDataBoundItems="true" class="form-control "  ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="descripcion" DataValueField="cod_par">
+                <asp:DropDownList  AppendDataBoundItems="true" class="form-control "  style="width:250px;margin-left:auto;margin-right:auto"   ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="descripcion" DataValueField="cod_par">
                     <asp:ListItem Value="0">Seleccione</asp:ListItem>
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [cod_par], [descripcion] FROM [tabla_par] WHERE ([cod_tab] = @cod_tab)">
@@ -30,9 +37,9 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-                <div style="text-align:left" class="form-inline col-md-3 ">
+                <div style="text-align:center" class="form-inline col-sm-4 ">
                 <label class="" for="nombre">Nombre :</label>
-                <asp:TextBox ID="nombre" class="form-control " runat="server"  style="" ReadOnly="True" ></asp:TextBox>
+                <asp:TextBox ID="nombre" class="form-control " runat="server"  style="width:250px;margin-left:auto;margin-right:auto" ReadOnly="True" ></asp:TextBox>
               </div>
               <%--<div style="text-align:left" class="form-inline col-md-3 ">
                 <label class="" for="TextBox2">Email :</label>
