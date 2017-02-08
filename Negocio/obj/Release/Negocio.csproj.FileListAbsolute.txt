@@ -1,0 +1,9 @@
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\Negocio.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\Negocio.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\Datos.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\Datos.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Release\Negocio.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\obj\Release\Negocio.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Negocio\bin\Release\ComponenteEntidad.pdb

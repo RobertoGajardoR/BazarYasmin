@@ -1,0 +1,14 @@
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\Datos.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\Datos.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.pdb
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\Datos.dll
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\Datos.pdb
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.dll
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Debug\ComponenteEntidad.pdb
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.dll
+C:\Users\Jokerman\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Debug\Datos.pdb

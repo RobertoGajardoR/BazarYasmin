@@ -1,0 +1,7 @@
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Release\Datos.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Release\Datos.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Release\Datos.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Release\Datos.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Release\ComponenteEntidad.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\bin\Release\ComponenteEntidad.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\BazarYasmin\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
