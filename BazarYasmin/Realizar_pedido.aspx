@@ -67,7 +67,7 @@
 
                     </style>
                     <div id="catalogo" class="auto-style1">
-    <asp:DataList ID="DataList1" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4"  ForeColor="Black" GridLines="Both" HorizontalAlign="Center" RepeatDirection="Horizontal" Width="180px" RepeatColumns="4" OnItemCommand="DataList1_ItemCommand">
+    <asp:DataList ID="DataList1" runat="server" BackColor="White" BorderColor="#666666" BorderStyle="None" BorderWidth="1px" CellPadding="4"  ForeColor="#333333" GridLines="Both" HorizontalAlign="Center" RepeatDirection="Horizontal" Width="180px" RepeatColumns="4" OnItemCommand="DataList1_ItemCommand">
         <AlternatingItemStyle BackColor="White" />
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

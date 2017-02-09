@@ -197,7 +197,10 @@ namespace BazarYasmin
         {
             if(GridView1.Rows.Count == 0)
             {
-                
+
+                alertpedido.CssClass = "alert alert-info";
+                lblAgregado.Text = "No hay productos agregados al pedido";
+                alertpedido.Visible = true;
 
                 //this.Response.Write("<script language='JavaScript'>window.alert('No hay productos agregados al pedido')</script>");
 
@@ -208,7 +211,7 @@ namespace BazarYasmin
             
             if(nombre.Text == "")
             {
-                    alertpedido.CssClass = "alert alert-warning";
+                    alertpedido.CssClass = "alert alert-danger";
                     lblAgregado.Text = "Inicie sesión para continuar.";
                     alertpedido.Visible = true;
 
@@ -218,7 +221,10 @@ namespace BazarYasmin
                 else { 
            if(DropDownList1.SelectedValue == "0")
            {
-                    this.Response.Write("<script language='JavaScript'>window.alert('Selecione una forma de entrega')</script>");
+                        alertpedido.CssClass = "alert alert-warning";
+                        lblAgregado.Text = "Selecione una forma de entrega.";
+                        alertpedido.Visible = true;
+                        //this.Response.Write("<script language='JavaScript'>window.alert('Selecione una forma de entrega')</script>");
            }
            else
            {
