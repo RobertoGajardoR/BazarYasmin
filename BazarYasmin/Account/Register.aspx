@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.Master" UICulture="es" Culture="es-MX AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="BazarYasmin.Account.Register" %>
+﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.Master" UICulture="es" Culture="es-MX" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="BazarYasmin.Account.Register" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
