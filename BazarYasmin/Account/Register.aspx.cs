@@ -39,6 +39,7 @@ namespace BazarYasmin.Account
                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
                 smtp.Host = "smtp.gmail.com"; //para gmail
                                               //smtp.Host = "smtp.live.com"; //para hotmail
+                correo.BodyEncoding = System.Text.Encoding.UTF8;
                 smtp.Port = 587;
                 smtp.Credentials = new System.Net.NetworkCredential("bazaryasmin.1@gmail.com", "guason6423");
                 smtp.EnableSsl = true;

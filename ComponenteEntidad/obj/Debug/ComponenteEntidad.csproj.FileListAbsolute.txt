@@ -18,3 +18,9 @@ C:\Users\Jokerman\Source\Repos\BazarYasmin\ComponenteEntidad\bin\Debug\Component
 C:\Users\Jokerman\Source\Repos\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.csprojResolveAssemblyReference.cache
 C:\Users\Jokerman\Source\Repos\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.dll
 C:\Users\Jokerman\Source\Repos\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.pdb
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\bin\Debug\ComponenteEntidad.dll
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\bin\Debug\ComponenteEntidad.pdb
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.csprojResolveAssemblyReference.cache
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.csproj.CoreCompileInputs.cache
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.dll
+C:\Users\jokerman\Desktop\supertesis\BazarYasmin\ComponenteEntidad\obj\Debug\ComponenteEntidad.pdb

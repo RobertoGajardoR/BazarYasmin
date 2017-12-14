@@ -52,6 +52,8 @@ namespace BazarYasmin.Account
                 //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
 
                 mail.IsBodyHtml = true;
+                mail.BodyEncoding = System.Text.Encoding.UTF8;
+
                 //Configuracion del SMTP
                 SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
                                        //Especificamos las credenciales con las que enviaremos el mail
