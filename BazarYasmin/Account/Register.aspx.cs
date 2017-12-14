@@ -27,27 +27,22 @@ namespace BazarYasmin.Account
                 string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                 //manager.SendEmail(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>.");
                  
-                 //Configuración del Mensaje
-                    MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                    //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
-                    mail.From = new MailAddress("bazaryasmin.1@gmail.com", "BazarYasmin", Encoding.UTF8);
-                    //Aquí ponemos el asunto del correo
-                    mail.Subject = "Confirmar cuenta BazarYasmin";
-                    //Aquí ponemos el mensaje que incluirá el correo
-                    mail.Body = "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>.";
-                    //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
-                    mail.To.Add(Email.Text);
-                //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
-                //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
-                
-                mail.IsBodyHtml = true;
-                //Configuracion del SMTP
-                SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
-                                           //Especificamos las credenciales con las que enviaremos el mail
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("bazaryasmin.1@gmail.com", "guason6423");
-                    SmtpServer.EnableSsl = true;
-                    SmtpServer.Send(mail);
+                System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
+                correo.From = new System.Net.Mail.MailAddress("bazaryasmin.1@gmail.com");
+                correo.To.Add(this.Email.Text);
+                correo.Subject = "Confirmar cuenta BazarYasmin";
+
+                correo.Body = "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>.";
+
+                correo.IsBodyHtml = true;
+                correo.Priority = System.Net.Mail.MailPriority.Normal;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+                smtp.Host = "smtp.gmail.com"; //para gmail
+                                              //smtp.Host = "smtp.live.com"; //para hotmail
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("bazaryasmin.1@gmail.com", "guason6423");
+                smtp.EnableSsl = true;
+                smtp.Send(correo);
                  
                  signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
                  IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
