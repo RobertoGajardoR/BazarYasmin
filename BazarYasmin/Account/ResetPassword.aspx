@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Restablecer contraseña" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="BazarYasmin.Account.ResetPassword" Async="true" %>
+﻿<%@ Page Title="Restablecer contraseña" Language="C#" MasterPageFile="~/Site.Master"  UICulture="es" Culture="es-MX"  AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="BazarYasmin.Account.ResetPassword" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
