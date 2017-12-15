@@ -93,7 +93,7 @@
                     </style>
                         <div class="col-lg-12" style="overflow: scroll;">
 
-                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" >
+                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" AutoGenerateColumns="False"  >
                                 <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
                                 <Columns>
                                     <asp:TemplateField HeaderText="Codigo" InsertVisible="False" SortExpression="codpedido">
@@ -148,7 +148,8 @@
                                         <EditItemTemplate>
                                             </EditItemTemplate>
                                         <ItemTemplate>
-                                            <asp:Button runat="server" CssClass="btn btn-primary" Text="Detalle"  data-toggle="modal" data-target="#myModal"/>
+                                           
+                                            <asp:Button runat="server" CssClass="btn btn-primary"   Text="Detalle"  data-toggle="modal" data-target="#myModal" CommandName="Select" CommandArgument="True" />
 
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -163,7 +164,7 @@
                                 <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                 <SortedDescendingHeaderStyle   BackColor="#3E3277" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion,pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega "></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" ></asp:SqlDataSource>
 
                             </div>
 
@@ -182,7 +183,7 @@
         </div>
         <div class="modal-body" >
             <div class="col-lg-12" style="overflow: scroll;">
-
+            <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
             <asp:GridView ID="GridView2" runat="server" Width="400" HorizontalAlign="Center" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                      <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
 

@@ -258,8 +258,7 @@ namespace BazarYasmin
                             PrepararConsulta.AgregarDetallePedido(Convert.ToInt32(pedido.Rows[0][0].ToString()), Convert.ToInt16(row.Cells[1].Text), int.Parse(((TextBox)row.Cells[4].FindControl("TextBox1")).Text), decimal.Parse(Convert.ToString(row.Cells[3].Text)), decimal.Parse(Convert.ToString(row.Cells[5].Text)), cadenaconexion);
                         }
                         SendEmail(sender, e);
-                        this.Response.Write("<script language='JavaScript'>window.alert('PROCESO TERMINADO CORRECTAMENTE')</script>");
-                        //Response.Redirect("pedidos.aspx");
+                        this.Response.Write("<script language='JavaScript'>window.alert('PROCESO TERMINADO CORRECTAMENTE');window.location = 'account/manage.aspx'</script>");
                     }
                     catch (Exception)
                     {
@@ -267,9 +266,10 @@ namespace BazarYasmin
 
                         throw;
                     }
-                
-            }
-            }
+                        
+
+                    }
+                }
             }
         }
 
@@ -337,6 +337,7 @@ namespace BazarYasmin
             {
                 smtp.Send(correo);
                 this.Response.Write("<script language='JavaScript'>window.alert('Pedido Enviado Correctamente. detalle pedido enviado a su correo')</script>");
+          
             }
             catch (Exception ex)
             {
