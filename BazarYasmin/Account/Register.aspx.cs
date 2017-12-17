@@ -49,8 +49,8 @@ namespace BazarYasmin.Account
                 try
                 {
                     smtp.Send(correo);
-                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                     this.Response.Write("<script language='JavaScript'>window.alert('Comfirmacion de cuenta enviada a su correo.')</script>");
+                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                 }
                 catch (Exception ex)
