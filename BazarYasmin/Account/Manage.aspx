@@ -24,12 +24,12 @@
                 <dl class="dl-horizontal">
                     <dt>Contraseña:</dt>
                     <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Modificar" CssClass="btn btn-primary" Visible="false" ID="ChangePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Crear" CssClass="btn btn-primary" Visible="false" ID="CreatePassword" runat="server" />
                     </dd>
                     <dt>Inicios de sesión externos:</dt>
                     <dd><%: LoginsCount %>
-                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="[Manage]" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="Administrar" CssClass="btn btn-primary" runat="server" />
 
                     </dd>
                     <%--

@@ -41,7 +41,7 @@ namespace BazarYasmin.Account
                 correo.From = new System.Net.Mail.MailAddress("bazaryasmin.1@gmail.com");
                 correo.To.Add(Email.Text);
                 correo.Subject = "Restablecer contraseña";
-                
+
 
                 correo.Body = "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>.";
                 correo.IsBodyHtml = true;
@@ -109,10 +109,10 @@ namespace BazarYasmin.Account
             //    SmtpServer.EnableSsl = true;
             //    SmtpServer.Send(mail);
 
-                
+
             //    loginForm.Visible = false;
             //    DisplayEmail.Visible = true;
-            }
         }
-    }
-}
+    } 
+ }
+
