@@ -49,17 +49,16 @@ namespace BazarYasmin.Account
                 try
                 {
                     smtp.Send(correo);
-                    this.Response.Write("<script language='JavaScript'>window.alert('Comfirmacion de cuenta enviada a su correo.')</script>");
-                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    
                 }
                 catch (Exception ex)
                 {
                     throw new Exception("Error: (" + ex.Message + ")");
                 }
+
             }
-
-
+            signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             /////
             //System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
             //    correo.From = new System.Net.Mail.MailAddress("bazaryasmin.1@gmail.com");
@@ -78,7 +77,7 @@ namespace BazarYasmin.Account
             //    smtp.Credentials = new System.Net.NetworkCredential("bazaryasmin.1@gmail.com", "guason6423");
             //    smtp.EnableSsl = true;
             //    smtp.Send(correo);
-                 
+
             //     signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
             //     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             //}
