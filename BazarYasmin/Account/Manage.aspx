@@ -149,7 +149,7 @@
                                             </EditItemTemplate>
                                         <ItemTemplate>
                                            
-                                            <asp:Button runat="server" CssClass="btn btn-primary"   Text="Detalle"  data-toggle="modal" data-target="#myModal" CommandName="Select" CommandArgument="True" />
+                                            <asp:Button runat="server" CssClass="btn btn-primary"  Text="Detalle"  data-toggle="modal" data-target="#myModal"/>
 
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -164,7 +164,7 @@
                                 <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                 <SortedDescendingHeaderStyle   BackColor="#3E3277" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" ></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"  ></asp:SqlDataSource>
 
                             </div>
 

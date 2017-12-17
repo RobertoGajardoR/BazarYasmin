@@ -11,6 +11,7 @@ using Owin;
 using BazarYasmin.Models;
 using System.Collections;
 using mercadopago;
+using System.Web.Security;
 
 namespace BazarYasmin.Account
 {
@@ -40,7 +41,7 @@ namespace BazarYasmin.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
-            SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion,pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.GetUserName()+"'";
+            SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion, pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.Name + "'";
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
@@ -139,9 +140,5 @@ namespace BazarYasmin.Account
 
             Response.Write(preference["response"]);
         }
-        //public void Detallepedido()
-        //{
-        //    Label4.Text = "maraca";
-        //}
     }
 }
