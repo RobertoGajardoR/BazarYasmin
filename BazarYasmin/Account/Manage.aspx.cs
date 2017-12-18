@@ -146,7 +146,7 @@ namespace BazarYasmin.Account
             Response.Write(preference["response"]);
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             pedidoSeleccionado = GridView1.SelectedDataKey.Value.ToString();
             SqlDataSource2.SelectCommand = "SELECT productos.descproducto, detallepedidos.cantproducto, detallepedidos.precio, detallepedidos.subtotal FROM detallepedidos INNER JOIN productos ON detallepedidos.codproducto = productos.codigoproducto WHERE detallepedidos.codpedido = " + pedidoSeleccionado;
