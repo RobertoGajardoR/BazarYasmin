@@ -12,18 +12,19 @@ using BazarYasmin.Models;
 using System.Collections;
 using mercadopago;
 using System.Web.Security;
+<<<<<<< HEAD
 using System.Web.UI.WebControls;
 
 
 
+=======
+>>>>>>> parent of c7d57ac... update manager
 
 namespace BazarYasmin.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
-        public string pedidoSelecionado;
-        public string montopedido;
-            
+
         protected string SuccessMessage
         {
             get;
@@ -47,16 +48,17 @@ namespace BazarYasmin.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
-            ///<<<<<<< HEAD
+///<<<<<<< HEAD
             SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion, pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.Name + "'";
-            ///=======  
+///=======
             //SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion,pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.Name +"'";
-            ///>>>>>>> a6e3ab437d8ab08ca40e0985bf47bcce8e280031
-            
-            //HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
+///>>>>>>> a6e3ab437d8ab08ca40e0985bf47bcce8e280031
+
+            HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
             // Habilitar esta opción tras configurar autenticación de dos factores
             //PhoneNumber.Text = manager.GetPhoneNumber(User.Identity.GetUserId()) ?? String.Empty;
+
             TwoFactorEnabled = manager.GetTwoFactorEnabled(User.Identity.GetUserId());
 
             LoginsCount = manager.GetLogins(User.Identity.GetUserId()).Count;
@@ -140,6 +142,7 @@ namespace BazarYasmin.Account
             Response.Redirect("/Account/Manage");
         }
 
+<<<<<<< HEAD
         
         //private void CargaDetalles()
         //{
@@ -166,5 +169,16 @@ namespace BazarYasmin.Account
         }
        
        
+=======
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            MP mp = new MP("4736332457228950", "0LWuHjraDil2tQrQN5uwMFaS1vuZMlWt");
+
+            Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"ARS\",\"unit_price\":10.5}]}");
+
+            Response.Write(preference["response"]);
+        }
+>>>>>>> parent of c7d57ac... update manager
     }
 }
