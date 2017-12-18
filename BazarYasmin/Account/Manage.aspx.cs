@@ -12,13 +12,6 @@ using BazarYasmin.Models;
 using System.Collections;
 using mercadopago;
 using System.Web.Security;
-<<<<<<< HEAD
-using System.Web.UI.WebControls;
-
-
-
-=======
->>>>>>> parent of c7d57ac... update manager
 
 namespace BazarYasmin.Account
 {
@@ -142,34 +135,6 @@ namespace BazarYasmin.Account
             Response.Redirect("/Account/Manage");
         }
 
-<<<<<<< HEAD
-        
-        //private void CargaDetalles()
-        //{
-        //    GridViewRow row = GridView1.SelectedRow;
-        //    string id = row.Cells[0].Text;
-        //    Label4.Text = id;
-        //}
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //GridViewRow row = GridView1.SelectedRow;
-            //string codigo = row.Cells[1].Text;
-            //TextBox1.Text = codigo;
-            // CargaDetalles();
-            // TextBox1.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text;
-            pedidoSelecionado = GridView1.SelectedDataKey.Value.ToString();
-            SqlDataSource2.SelectCommand = "SELECT productos.descproducto, detallepedidos.cantproducto, detallepedidos.precio, detallepedidos.subtotal FROM detallepedidos INNER JOIN productos ON detallepedidos.codproducto = productos.codigoproducto WHERE detallepedidos.codpedido = " + pedidoSelecionado;
-            SqlDataSource3.SelectCommand = "SELECT [totalpedido], [iva], [subtotal] FROM [pedidos] WHERE [codpedido] = " + pedidoSelecionado;
-            GridView2.DataBind();
-            GridView3.DataBind();
-            montopedido = GridView3.Rows[0].Cells[2].Text;
-            verDetalle.Visible = true;
-
-        }
-       
-       
-=======
         protected void Button2_Click(object sender, EventArgs e)
         {
 
@@ -179,6 +144,5 @@ namespace BazarYasmin.Account
 
             Response.Write(preference["response"]);
         }
->>>>>>> parent of c7d57ac... update manager
     }
 }
