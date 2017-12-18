@@ -30,7 +30,6 @@ namespace BazarYasmin.Account
                 Context.GetOwinContext().Authentication.Challenge(properties, provider);
                 Response.StatusCode = 401;
                 Response.End();
-                
             }
         }
 
