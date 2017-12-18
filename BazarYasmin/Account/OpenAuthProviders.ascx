@@ -12,7 +12,7 @@
                     <span class="fa fa-<%#: Item.ToLower() %> "></span>
                     <%#: Item %>
                 </button>
-            </p>               <style>.facebook{display : none;}#facebook{display : none;}</style>
+            </p>               <style>.facebook{visibility: hidden}</style>
 
         </ItemTemplate>
         <EmptyDataTemplate>
