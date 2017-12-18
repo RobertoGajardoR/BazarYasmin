@@ -55,9 +55,9 @@ namespace BazarYasmin
             //   consumerKey: "yPsEgEtfx4ec55fsNND1mGM0B",
             //   consumerSecret: "41U5M2zpSCIW6yk3ghfCAG5wWVIowpeivh2n1HM45Q3y6aY74i");
 
-            app.UseFacebookAuthentication(
-               appId: "558132891057703",
-               appSecret: "d64cfa319e55c0ec447f88dade3fcd88");
+            //app.UseFacebookAuthentication(
+              // appId: "558132891057703",
+               //appSecret: "d64cfa319e55c0ec447f88dade3fcd88");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
