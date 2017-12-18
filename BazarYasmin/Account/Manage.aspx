@@ -24,12 +24,12 @@
                 <dl class="dl-horizontal">
                     <dt>Contraseña:</dt>
                     <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Modificar" CssClass="btn btn-primary" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Crear" CssClass="btn btn-primary" Visible="false" ID="CreatePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword"  Text="Modificar" cssclass="btn btn-primary btn-xs"  Visible="false" ID="ChangePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Crear" cssclass="btn btn-primary btn-xs"  Visible="false" ID="CreatePassword" runat="server" />
                     </dd>
                     <dt>Inicios de sesión externos:</dt>
                     <dd><%: LoginsCount %>
-                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="Administrar" CssClass="btn btn-primary" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="Administrar" cssclass="btn btn-primary btn-xs"   runat="server" />
 
                     </dd>
                     <%--
@@ -84,6 +84,7 @@
         <div class="col-md-12">
             <div class="form-horizontal">
                 <h4>Administrar mis pedidos</h4>
+                
                 <hr />
                 <style>
                         .GridHeader
@@ -93,7 +94,7 @@
                     </style>
                         <div class="col-lg-12" style="overflow: scroll;">
 
-                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" AutoGenerateColumns="False"  >
+                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  >
                                 <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
                                 <Columns>
                                     <asp:TemplateField HeaderText="Codigo" InsertVisible="False" SortExpression="codpedido">
@@ -144,15 +145,7 @@
                                         </EditItemTemplate>
                                          <HeaderStyle CssClass="GridHeader" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField ShowHeader="False">
-                                        <EditItemTemplate>
-                                            </EditItemTemplate>
-                                        <ItemTemplate>
-                                           
-                                            <asp:Button runat="server" CssClass="btn btn-primary"  Text="Detalle"  data-toggle="modal" data-target="#myModal"/>
-
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                 <asp:ButtonField CommandName="Select"  Text="Seleccionar" ControlStyle-CssClass="btn btn-info" />
                                 </Columns>
                                 <FooterStyle BackColor="#B5C7DE" Height="35px" ForeColor="#4A3C8C" />
                                 <HeaderStyle   BackColor="#4A3C8C" Height="40px" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -164,6 +157,9 @@
                                 <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                 <SortedDescendingHeaderStyle   BackColor="#3E3277" />
                     </asp:GridView>
+
+                    <asp:Button id="verDetalle" runat="server" CssClass="btn btn-success" style="display:block;;margin-left:auto;margin-right:auto;margin-top:15px" Visible="false" Text="Ver Detalle"  data-toggle="modal" data-target="#myModal"/>
+
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"  ></asp:SqlDataSource>
 
                             </div>
@@ -183,7 +179,7 @@
         </div>
         <div class="modal-body" >
             <div class="col-lg-12" style="overflow: scroll;">
-            <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            
             <asp:GridView ID="GridView2" runat="server" Width="400" HorizontalAlign="Center" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                      <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
 
@@ -252,22 +248,23 @@
                 </asp:SqlDataSource>
             </div>
               <%
-       
-       
-       MP mp = new MP("4736332457228950", "0LWuHjraDil2tQrQN5uwMFaS1vuZMlWt");
 
-       String preferenceData = "{\"items\":"+
-           "[{"+
-               "\"title\":\"Pedido-1\","+
-               "\"quantity\":1,"+
-               "\"currency_id\":\"CLP\","+
-               "\"unit_price\":20800"+
-           "}]"+
-       "}";
 
-       Hashtable preference = mp.createPreference(preferenceData);
+                  MP mp = new MP("4736332457228950", "0LWuHjraDil2tQrQN5uwMFaS1vuZMlWt");
+
+                  String preferenceData = "{\"items\":" +
+                      "[{" +
+                          "\"title\":\"Pedido-"+pedidoSelecionado+"\"," +
+                          "\"quantity\":1," +
+                          "\"currency_id\":\"CLP\"," +
+                          "\"unit_price\":"+montopedido+"" +
+                      "}]" +
+                  "}";
+
+                  Hashtable preference = mp.createPreference(preferenceData);
+
 %>
-            <div style="align-content:center;text-align:center" ><a href="<% Response.Write(((Hashtable) preference["response"])["init_point"]); %>"><img  width="180" height="60" src="../img/BOTON-DE-MERCADO-PAGO-300x90.jpg" /></a></div>
+            <div style="align-content:center;text-align:center" ><a href="<% Response.Write(((Hashtable) preference["response"])["init_point"]); %>"><img  width="180" height="60" src="../img/BOTON-DE-MERCADO-PAGO-300x90.jpg" /></div>
 <%--            <img src="../img/boton-paypal.png"  width="180" height="60" />--%>
             <%--<form name="_xclick" runat="server" action="https://www.paypal.com/es/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_xclick">
