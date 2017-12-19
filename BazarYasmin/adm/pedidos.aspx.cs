@@ -55,25 +55,34 @@ namespace BazarYasmin.adm
             DropDownList estadodrop2 = (DropDownList)GridView1.Rows[indexpedido].FindControl("DropDownList2");
             //estadodrop2.SelectedValue = estado.Text;
             codigoPedido = GridView1.DataKeys[indexpedido].Value.ToString();//row.Cells[1].Text.ToString();
-
-            if (PrepararConsulta.CambiarEstadoPedido(int.Parse(codigoPedido), int.Parse(estadodrop2.SelectedValue), cadenaconexion))
+            if (estadodrop2.SelectedValue == "0")
             {
-
-                //Response.Write("<script>alert('Producto dadon de baja correctamente');</script>");
-                string script = "alert('Se cambio de estado correctamente.');";
+                string script = "alert('Seleccione estado valido.');";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
-                GridView1.DataBind();
             }
             else
             {
-                //Response.Write("<script>alert('error al dar de baja');</script>");
-                string script = "alert('error al cambiar estado.');";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
-                GridView1.DataBind();
+                if (PrepararConsulta.CambiarEstadoPedido(int.Parse(codigoPedido), int.Parse(estadodrop2.SelectedValue), cadenaconexion))
+                {
+
+                    //Response.Write("<script>alert('Producto dadon de baja correctamente');</script>");
+                    string script = "alert('Se cambio de estado correctamente.');";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    //Response.Write("<script>alert('error al dar de baja');</script>");
+                    string script = "alert('error al cambiar estado.');";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                    GridView1.DataBind();
+                }
             }
-            GridView1.DataBind();
+            
+            //GridView1.DataBind();
         }
     }
 }
