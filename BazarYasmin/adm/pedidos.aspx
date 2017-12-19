@@ -89,7 +89,7 @@
                                         <EditItemTemplate>
 
                                             <asp:DropDownList ID="DropDownList2" AppendDataBoundItems="true" cssclass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="cod_par">
-                                                   <asp:ListItem Value="0" Text="seleccione" Selected="True"  ></asp:ListItem>
+                                                   <asp:ListItem Value="cod_par" Text="seleccione" Selected="True"  ></asp:ListItem>
 
                                             </asp:DropDownList>
                                         </EditItemTemplate>
