@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
-<ul class="nav navbar-nav side-nav">
+    <ul class="nav navbar-nav side-nav">
                     <li >
                         <a href="../adm/inicio.aspx"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
@@ -171,7 +171,7 @@
         <SortedDescendingHeaderStyle BackColor="#3E3277" />
 </asp:GridView>
  </div>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="SELECT * FROM [productos]" SelectCommand="SELECT * FROM [productos] where estado = 0"></asp:SqlDataSource>
 
     
 </asp:Content>
