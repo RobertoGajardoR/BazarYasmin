@@ -56,7 +56,7 @@ namespace BazarYasmin.adm
             //estadodrop2.SelectedValue = estado.Text;
             codigoPedido = GridView1.DataKeys[indexpedido].Value.ToString();//row.Cells[1].Text.ToString();
 
-            if (PrepararConsulta.CambiarEstadoPedido(int.Parse(codigoPedido), int.Parse(estadodrop2.SelectedValue), cadenaconexion))
+            if (PrepararConsulta.CambiarEstadoPedido(int.Parse(codigoPedido), int.Parse(estadodrop2.SelectedValue), cadenaconexion) && estadodrop2.SelectedValue != "0")
             {
 
                 //Response.Write("<script>alert('Producto dadon de baja correctamente');</script>");
