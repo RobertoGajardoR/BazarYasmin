@@ -7,12 +7,12 @@
         SelectMethod="GetProviderNames" ViewStateMode="Disabled">
         <ItemTemplate>
             <p>
-                <button type="submit" class="<%#: Item.ToLower() %> btn btn-block btn-social btn-<%#: Item.ToLower() %>  " name="provider" value="<%#: Item %>"
+                <button type="submit" class="btn btn-block btn-social btn-<%#: Item.ToLower() %>  " name="provider" value="<%#: Item %>"
                     title="Inicie sesión con su <%#: Item %> cuenta.">
                     <span class="fa fa-<%#: Item.ToLower() %> "></span>
                     <%#: Item %>
                 </button>
-            </p><style>.facebook{visibility:hidden}</style>
+            </p>
         </ItemTemplate>
         <EmptyDataTemplate>
             <div>
