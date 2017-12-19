@@ -171,7 +171,7 @@
         <SortedDescendingHeaderStyle BackColor="#3E3277" />
 </asp:GridView>
  </div>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"  DeleteCommand="SELECT * FROM [productos]" SelectCommand="SELECT * FROM [productos] where estado = 0"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
 
     
 </asp:Content>
