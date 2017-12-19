@@ -17,8 +17,7 @@ namespace BazarYasmin.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
-        public string pedidoSeleccionado;
-        public string montopedido;
+
         protected string SuccessMessage
         {
             get;
@@ -144,17 +143,6 @@ namespace BazarYasmin.Account
             Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"ARS\",\"unit_price\":10.5}]}");
 
             Response.Write(preference["response"]);
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pedidoSeleccionado = GridView1.SelectedDataKey.Value.ToString();
-            SqlDataSource2.SelectCommand = "SELECT productos.descproducto, detallepedidos.cantproducto, detallepedidos.precio, detallepedidos.subtotal FROM detallepedidos INNER JOIN productos ON detallepedidos.codproducto = productos.codigoproducto WHERE detallepedidos.codpedido = " + pedidoSeleccionado;
-            SqlDataSource3.SelectCommand = "SELECT [totalpedido], [iva], [subtotal] FROM [pedidos] WHERE [codpedido] = " + pedidoSeleccionado;
-            GridView2.DataBind();
-            GridView3.DataBind();
-            montopedido = GridView3.Rows[0].Cells[2].Text;
-            verDetalle.Visible = true;
         }
     }
 }
