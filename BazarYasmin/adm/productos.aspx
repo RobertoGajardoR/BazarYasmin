@@ -125,15 +125,15 @@
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
             <EditItemTemplate>
-                        <asp:TextBox ID="editdescripcion" Text='<%# Bind("descproducto") %>' runat="server"></asp:TextBox>
+                        <asp:TextBox ID="editdescripcion" runat="server"></asp:TextBox>
                     </EditItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Categoria" SortExpression="codcategoria">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList2" AppendDataBoundItems="true" cssclass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="descategoria" DataValueField="codcategoria">
-                                                   <asp:ListItem Value="0" Text="seleccione" Selected="True"  ></asp:ListItem>
-
-                                            </asp:DropDownList>
+                        <asp:DropDownList ID="ddlEstadoGrid" runat="server" Height="27px" Width="61px">
+                            <asp:ListItem Value="1">Activo</asp:ListItem>
+                            <asp:ListItem Value="2">Inactivo</asp:ListItem>
+                        </asp:DropDownList>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("codcategoria") %>'></asp:Label>
@@ -147,7 +147,7 @@
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
             <EditItemTemplate>
-                        <asp:TextBox ID="editprecio" text='<%# Bind("preproducto") %>' runat="server"></asp:TextBox>
+                        <asp:TextBox ID="editprecio" runat="server"></asp:TextBox>
                     </EditItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Cantidad" SortExpression="canproducto">
@@ -156,7 +156,7 @@
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
             <EditItemTemplate>
-                        <asp:TextBox ID="editcant" Text='<%# Bind("canproducto") %>' runat="server"></asp:TextBox>
+                        <asp:TextBox ID="editcant" runat="server"></asp:TextBox>
                     </EditItemTemplate>
         </asp:TemplateField>
         <asp:CommandField  ButtonType="Image"  ControlStyle-Width="30" ControlStyle-Height="30" ShowDeleteButton="True" ShowEditButton="True" CancelImageUrl="~/img/dialog-error.png" DeleteImageUrl="~/img/trashcan_full_alt.png" DeleteText="Baja" EditImageUrl="~/img/edit.png" UpdateImageUrl="~/img/148752.png" >
@@ -181,6 +181,6 @@
 </asp:GridView>
  </div>
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="SELECT * FROM [productos]" SelectCommand="SELECT * FROM [productos] where estado = 0"></asp:SqlDataSource>
-    <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:DefaultConnection %>' SelectCommand="SELECT codcategoria, descategoria FROM categorias "></asp:SqlDataSource>
+
     
 </asp:Content>
