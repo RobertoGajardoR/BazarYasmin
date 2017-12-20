@@ -43,17 +43,13 @@ namespace BazarYasmin.adm
 
             if(PrepararConsulta.AgregarProducto(descripcion, codcategoria, precioo, cantidadd, imagen, cadenaconexion))
             {
-                //Response.Write("<script>alert('Producto " + descripcion + " agregado correctamente');</script>");
-                string script = "alert('Producto " + descripcion + " agregado correctamente');";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                Response.Write("<script>alert('Producto " + descripcion + " agregado correctamente');</script>");
+
             }
             else
             {
-                //Response.Write("<script>alert('Producto no se agrego correctamente');</script>");
-                string script = "alert('Producto no se agrego correctamente');";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
+                Response.Write("<script>alert('Producto no se agrego correctamente');</script>");
+
             }
         }
 
@@ -62,20 +58,13 @@ namespace BazarYasmin.adm
             int id = int.Parse(GridView1.DataKeys[e.RowIndex].Value.ToString());
             if (PrepararConsulta.CambiarEstadoProducto(id, 1, cadenaconexion))
             {
+                Response.Write("<script>alert('Producto dadon de baja correctamente');</script>");
 
-                //Response.Write("<script>alert('Producto dadon de baja correctamente');</script>");
-                string script = "alert('Producto dadon de baja correctamente');";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
-                GridView1.DataBind();
             }
             else
             {
-                //Response.Write("<script>alert('error al dar de baja');</script>");
-                string script = "alert('error al dar de baja');";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
-                GridView1.DataBind();
+                Response.Write("<script>alert('error al dar de baja');</script>");
+
             }
         }
 

@@ -24,12 +24,12 @@
                 <dl class="dl-horizontal">
                     <dt>Contraseña:</dt>
                     <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Modificar" CssClass="btn btn-primary btn-xs" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Crear" CssClass="btn btn-primary btn-xs" Visible="false" ID="CreatePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
                     </dd>
                     <dt>Inicios de sesión externos:</dt>
                     <dd><%: LoginsCount %>
-                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="Administrar" CssClass="btn btn-primary btn-xs" runat="server" />
+                        <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="[Manage]" runat="server" />
 
                     </dd>
                     <%--
@@ -93,7 +93,7 @@
                     </style>
                         <div class="col-lg-12" style="overflow: scroll;">
 
-                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  >
+                            <asp:GridView ID ="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="3"  Width="1000px" EmptyDataText="No se encuentran Pedidos"  DataKeyNames="codpedido" DataSourceID="SqlDataSource1" HorizontalAlign="Center" ShowFooter="True" >
                                 <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
                                 <Columns>
                                     <asp:TemplateField HeaderText="Codigo" InsertVisible="False" SortExpression="codpedido">
@@ -144,7 +144,14 @@
                                         </EditItemTemplate>
                                          <HeaderStyle CssClass="GridHeader" />
                                     </asp:TemplateField>
-                                    <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Seleccionar" ControlStyle-CssClass="btn btn-info" />
+                                    <asp:TemplateField ShowHeader="False">
+                                        <EditItemTemplate>
+                                            </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" CssClass="btn btn-primary" Text="Detalle"  data-toggle="modal" data-target="#myModal"/>
+
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                                 <FooterStyle BackColor="#B5C7DE" Height="35px" ForeColor="#4A3C8C" />
                                 <HeaderStyle   BackColor="#4A3C8C" Height="40px" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -156,12 +163,11 @@
                                 <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                 <SortedDescendingHeaderStyle   BackColor="#3E3277" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"  ></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion,pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega "></asp:SqlDataSource>
 
                             </div>
 
             </div>
-            <asp:Button ID="verDetalle" runat="server" CssClass="btn btn-success" style="display:block;margin-left:auto;margin-right:auto;margin-top:15px" Visible="false" Text="Ver Detalle"  data-toggle="modal" data-target="#myModal"/>
         </div>
     </div>
       <!-- Modal -->
@@ -176,6 +182,7 @@
         </div>
         <div class="modal-body" >
             <div class="col-lg-12" style="overflow: scroll;">
+
             <asp:GridView ID="GridView2" runat="server" Width="400" HorizontalAlign="Center" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                      <AlternatingRowStyle HorizontalAlign="Center" Height="35px" BackColor="#F7F7F7" />
 
@@ -250,10 +257,10 @@
 
        String preferenceData = "{\"items\":"+
            "[{"+
-               "\"title\":\"Pedido-"+pedidoSeleccionado+"\","+
+               "\"title\":\"Pedido-1\","+
                "\"quantity\":1,"+
                "\"currency_id\":\"CLP\","+
-               "\"unit_price\":"+montopedido+""+
+               "\"unit_price\":20800"+
            "}]"+
        "}";
 

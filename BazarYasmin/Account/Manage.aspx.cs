@@ -11,14 +11,11 @@ using Owin;
 using BazarYasmin.Models;
 using System.Collections;
 using mercadopago;
-using System.Web.Security;
 
 namespace BazarYasmin.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
-        public string pedidoSeleccionado;
-        public string montopedido;
         protected string SuccessMessage
         {
             get;
@@ -41,12 +38,6 @@ namespace BazarYasmin.Account
         protected void Page_Load()
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-
-///<<<<<<< HEAD
-            SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion, pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.Name + "'";
-///=======
-            //SqlDataSource1.SelectCommand =  "SELECT pedidos.codpedido, CONVERT (varchar, pedidos.fechpedido, 103) AS fechpedido, pedidos.subtotal, pedidos.iva, pedidos.totalpedido, AspNetUsers.UserName, pedidos.estado, tabla_par.descripcion,pedidos.entrega, par1.descripcion as entregad FROM pedidos INNER JOIN AspNetUsers ON AspNetUsers.Id = pedidos.codcliente INNER JOIN tabla_par ON tabla_par.cod_tab = 1 AND tabla_par.cod_par = pedidos.estado INNER JOIN tabla_par as par1 ON par1.cod_tab = 2 AND par1.cod_par = pedidos.entrega where AspNetUsers.UserName = '" + User.Identity.Name +"'";
-///>>>>>>> a6e3ab437d8ab08ca40e0985bf47bcce8e280031
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
@@ -144,17 +135,6 @@ namespace BazarYasmin.Account
             Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"ARS\",\"unit_price\":10.5}]}");
 
             Response.Write(preference["response"]);
-        }
-
-        public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pedidoSeleccionado = GridView1.SelectedDataKey.Value.ToString();
-            SqlDataSource2.SelectCommand = "SELECT productos.descproducto, detallepedidos.cantproducto, detallepedidos.precio, detallepedidos.subtotal FROM detallepedidos INNER JOIN productos ON detallepedidos.codproducto = productos.codigoproducto WHERE detallepedidos.codpedido = " + pedidoSeleccionado;
-            SqlDataSource3.SelectCommand = "SELECT [totalpedido], [iva], [subtotal] FROM [pedidos] WHERE [codpedido] = " + pedidoSeleccionado;
-            GridView2.DataBind();
-            GridView3.DataBind();
-            montopedido = GridView3.Rows[0].Cells[2].Text;
-            verDetalle.Visible = true;
         }
     }
 }

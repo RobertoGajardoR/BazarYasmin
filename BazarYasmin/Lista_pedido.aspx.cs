@@ -258,7 +258,8 @@ namespace BazarYasmin
                             PrepararConsulta.AgregarDetallePedido(Convert.ToInt32(pedido.Rows[0][0].ToString()), Convert.ToInt16(row.Cells[1].Text), int.Parse(((TextBox)row.Cells[4].FindControl("TextBox1")).Text), decimal.Parse(Convert.ToString(row.Cells[3].Text)), decimal.Parse(Convert.ToString(row.Cells[5].Text)), cadenaconexion);
                         }
                         SendEmail(sender, e);
-                        this.Response.Write("<script language='JavaScript'>window.alert('PROCESO TERMINADO CORRECTAMENTE');window.location = 'account/manage.aspx'</script>");
+                        this.Response.Write("<script language='JavaScript'>window.alert('PROCESO TERMINADO CORRECTAMENTE')</script>");
+                        //Response.Redirect("pedidos.aspx");
                     }
                     catch (Exception)
                     {
@@ -266,10 +267,9 @@ namespace BazarYasmin
 
                         throw;
                     }
-                        
-
-                    }
-                }
+                
+            }
+            }
             }
         }
 
@@ -309,7 +309,7 @@ namespace BazarYasmin
                 //\
                 cant = System.Convert.ToInt16(((TextBox)this.GridView1.Rows[i].Cells[0].FindControl("TextBox1")).Text);
                 prec = Decimal.Parse(GridView1.Rows[i].Cells[3].Text);
-                des += "<br/>" + (GridView1.Rows[i].Cells[2].Text) + " " + "(" + cant + ")" + " " + Convert.ToString(prec) + "<br/>";
+                des += "\r\n" + (GridView1.Rows[i].Cells[2].Text) + " " + "(" + cant + ")" + " " + Convert.ToString(prec) + "\r\n";
                 //Actualiza la canasta
 
                 foreach (DataRow objDR in items.Rows)
@@ -322,14 +322,13 @@ namespace BazarYasmin
 
             }
 
-            correo.Body = "Hola  Usted ha realizado un pedido por la cantidad de : $" + lblTotal.Text + "<br/>" + des;
-            correo.IsBodyHtml = true;
+            correo.Body = "Hola  Usted ha realizado un pedido por la cantidad de : S/. " + lblTotal.Text + "\r\n" + des;
+
+            correo.IsBodyHtml = false;
             correo.Priority = System.Net.Mail.MailPriority.Normal;
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
             smtp.Host = "smtp.gmail.com"; //para gmail
-                                          //smtp.Host = "smtp.live.com"; //para hotmail
-            correo.BodyEncoding = System.Text.Encoding.UTF8;
-
+            //smtp.Host = "smtp.live.com"; //para hotmail
             smtp.Port = 587;
             smtp.Credentials = new System.Net.NetworkCredential("bazaryasmin.1@gmail.com", "guason6423");
             smtp.EnableSsl = true;
@@ -337,7 +336,6 @@ namespace BazarYasmin
             {
                 smtp.Send(correo);
                 this.Response.Write("<script language='JavaScript'>window.alert('Pedido Enviado Correctamente. detalle pedido enviado a su correo')</script>");
-          
             }
             catch (Exception ex)
             {
@@ -345,6 +343,6 @@ namespace BazarYasmin
             }
         }
 
-        
+     
     }
 }

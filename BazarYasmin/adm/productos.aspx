@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
-    <ul class="nav navbar-nav side-nav">
+<ul class="nav navbar-nav side-nav">
                     <li >
                         <a href="../adm/inicio.aspx"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
@@ -124,9 +124,6 @@
                         <asp:Label ID="Label7" runat="server" Text='<%# Bind("descproducto") %>'></asp:Label>
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
-            <EditItemTemplate>
-                        <asp:TextBox ID="editdescripcion" runat="server"></asp:TextBox>
-                    </EditItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Categoria" SortExpression="codcategoria">
                     <EditItemTemplate>
@@ -146,18 +143,12 @@
                         <asp:Label ID="Labelr" runat="server" Text='<%# Bind("preproducto") %>'></asp:Label>
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
-            <EditItemTemplate>
-                        <asp:TextBox ID="editprecio" runat="server"></asp:TextBox>
-                    </EditItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Cantidad" SortExpression="canproducto">
                     <ItemTemplate>
                         <asp:Label ID="Label51" runat="server" Text='<%# Bind("canproducto") %>'></asp:Label>
                     </ItemTemplate>
             <HeaderStyle CssClass="GridHeader" />
-            <EditItemTemplate>
-                        <asp:TextBox ID="editcant" runat="server"></asp:TextBox>
-                    </EditItemTemplate>
         </asp:TemplateField>
         <asp:CommandField  ButtonType="Image"  ControlStyle-Width="30" ControlStyle-Height="30" ShowDeleteButton="True" ShowEditButton="True" CancelImageUrl="~/img/dialog-error.png" DeleteImageUrl="~/img/trashcan_full_alt.png" DeleteText="Baja" EditImageUrl="~/img/edit.png" UpdateImageUrl="~/img/148752.png" >
                          
@@ -180,7 +171,7 @@
         <SortedDescendingHeaderStyle BackColor="#3E3277" />
 </asp:GridView>
  </div>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" DeleteCommand="SELECT * FROM [productos]" SelectCommand="SELECT * FROM [productos] where estado = 0"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
 
     
 </asp:Content>
