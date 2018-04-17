@@ -6,14 +6,14 @@
     <asp:ListView runat="server" ID="providerDetails" ItemType="System.String"
         SelectMethod="GetProviderNames" ViewStateMode="Disabled">
         <ItemTemplate>
-            <p>
-                <button type="submit" class="<%#: Item.ToLower() %> btn btn-block btn-social btn-<%#: Item.ToLower() %>  " name="provider" value="<%#: Item %>"
+            
+                <button type="submit"   class="<%#: Item.ToLower() %> btn btn-block btn-social btn-<%#: Item.ToLower() %>  " name="provider" value="<%#: Item %>"
                     title="Inicie sesión con su <%#: Item %> cuenta.">
                     <span class="fa fa-<%#: Item.ToLower() %> "></span>
                     <%#: Item %>
                 </button>
-                <style>.facebook{visibility:hidden}</style>
-            </p>
+            </p>               <style>.facebook{visibility: hidden}</style>
+
         </ItemTemplate>
         <EmptyDataTemplate>
             <div>
